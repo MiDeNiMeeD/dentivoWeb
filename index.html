@@ -774,6 +774,9 @@
     </nav>
 
     <div class="header-tools">
+      <a class="icon-btn" href="download.html" data-i18n-aria="nav.download" data-i18n-title="nav.download" aria-label="Télécharger la démo" title="Télécharger la démo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+      </a>
       <div class="seg" role="group" aria-label="Langue / Language">
         <button type="button" id="lang-fr" aria-pressed="true">FR</button>
         <button type="button" id="lang-en" aria-pressed="false">EN</button>
@@ -1174,6 +1177,7 @@
       'nav.security': 'Vos données',
       'nav.screens': 'Captures',
       'nav.contact': 'Contact',
+      'nav.download': 'Télécharger la démo',
       'theme.toggle': 'Changer de thème',
       'hero.eyebrow': 'Logiciel de gestion de cabinet dentaire',
       'hero.title1': 'Le dossier de vos patients,',
@@ -1272,6 +1276,7 @@
       'nav.security': 'Your data',
       'nav.screens': 'Screenshots',
       'nav.contact': 'Contact',
+      'nav.download': 'Download the demo',
       'theme.toggle': 'Toggle theme',
       'hero.eyebrow': 'Dental practice management software',
       'hero.title1': 'Your patient records,',
@@ -1372,6 +1377,10 @@
     for (const el of document.querySelectorAll('[data-i18n-aria]')) {
       const key = el.getAttribute('data-i18n-aria')
       if (dict[key]) el.setAttribute('aria-label', dict[key])
+    }
+    for (const el of document.querySelectorAll('[data-i18n-title]')) {
+      const key = el.getAttribute('data-i18n-title')
+      if (dict[key]) el.setAttribute('title', dict[key])
     }
     document.getElementById('lang-fr').setAttribute('aria-pressed', String(lang === 'fr'))
     document.getElementById('lang-en').setAttribute('aria-pressed', String(lang === 'en'))
