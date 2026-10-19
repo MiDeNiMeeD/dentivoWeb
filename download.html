@@ -234,6 +234,14 @@
   }
   .file-meta li + li::before { content: '·'; margin-right: 14px; color: var(--border-strong); }
   .dl-card .after { margin-top: 18px; font-size: 13px; color: var(--text-muted); text-align: center; }
+  /* Windows / Mac: the visitor's system is picked on load, the switch changes it.
+     Everything marked only-win / only-mac follows. */
+  .os-switch { display: flex; width: 100%; margin-top: 22px; }
+  .os-switch button { flex: 1; font-size: 13.5px; padding: 7px 10px; }
+  .dl-card .os-switch + .btn { margin-top: 16px; }
+  .dl-card .btn + .btn { margin-top: 10px; }
+  .which-mac { margin: 10px 0 0; font-size: 12.5px; color: var(--text-muted); text-align: center; }
+  :root[data-os='mac'] .only-win, :root:not([data-os='mac']) .only-mac { display: none !important; }
   .dl-card .after a { color: var(--brand-primary); font-weight: 600; }
 
   /* ============ Sections =============================================== */
@@ -412,14 +420,34 @@
           <span class="badge" data-i18n="card.badge">7 jours</span>
         </div>
 
-        <a class="btn btn-primary btn-lg" id="download-btn" href="https://github.com/MiDeNiMeeD/dentivoWeb/releases/latest/download/dentivo-demo.exe" download>
+        <div class="seg os-switch" role="group" data-i18n-aria="card.osSwitch" aria-label="Système de l'ordinateur">
+          <button type="button" id="os-win" aria-pressed="true">Windows</button>
+          <button type="button" id="os-mac" aria-pressed="false">Mac</button>
+        </div>
+
+        <a class="btn btn-primary btn-lg only-win" id="download-btn" href="https://github.com/MiDeNiMeeD/dentivoWeb/releases/latest/download/dentivo-demo.exe" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
           <span data-i18n="card.cta">Télécharger pour Windows</span>
         </a>
-        <ul class="file-meta">
+        <ul class="file-meta only-win">
           <li>dentivo-demo.exe</li>
           <li data-i18n="card.size">225 Mo</li>
           <li data-i18n="card.os">Windows 10 / 11 (64 bits)</li>
+        </ul>
+
+        <a class="btn btn-primary btn-lg only-mac" href="https://github.com/MiDeNiMeeD/dentivoWeb/releases/latest/download/Dentivo-demo-AppleSilicon.dmg" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+          <span data-i18n="card.ctaMac">Télécharger pour Mac (puce Apple)</span>
+        </a>
+        <a class="btn btn-secondary only-mac" href="https://github.com/MiDeNiMeeD/dentivoWeb/releases/latest/download/Dentivo-demo-Intel.dmg" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+          <span data-i18n="card.ctaMacIntel">Mac avec processeur Intel</span>
+        </a>
+        <p class="which-mac only-mac" data-i18n="card.whichMac">Quel Mac ? Voir Menu Pomme › À propos de ce Mac.</p>
+        <ul class="file-meta only-mac">
+          <li>.dmg</li>
+          <li data-i18n="card.sizeMac">13 Mo</li>
+          <li data-i18n="card.osMac">macOS 11 ou plus récent</li>
         </ul>
         <p class="after"><span data-i18n="card.help">Un problème pour télécharger ?</span> <a href="https://wa.me/21624905669" target="_blank" rel="noopener" data-i18n="card.helpLink">Écrivez-nous sur WhatsApp</a></p>
       </div>
@@ -436,11 +464,13 @@
       <ol class="steps">
         <li>
           <h3 data-i18n="step1.t">Téléchargez</h3>
-          <p data-i18n="step1.d">Cliquez sur « Télécharger pour Windows » et enregistrez le fichier dentivo-demo.exe.</p>
+          <p class="only-win" data-i18n="step1.d">Cliquez sur « Télécharger pour Windows » et enregistrez le fichier dentivo-demo.exe.</p>
+          <p class="only-mac" data-i18n="step1.dMac">Cliquez sur « Télécharger pour Mac » (ou « Mac avec processeur Intel ») et ouvrez le fichier .dmg.</p>
         </li>
         <li>
           <h3 data-i18n="step2.t">Lancez l'installation</h3>
-          <p data-i18n="step2.d">Ouvrez le fichier téléchargé et suivez l'assistant, en français.</p>
+          <p class="only-win" data-i18n="step2.d">Ouvrez le fichier téléchargé et suivez l'assistant, en français.</p>
+          <p class="only-mac" data-i18n="step2.dMac">Glissez Dentivo dans le dossier Applications, puis ouvrez-le depuis Applications.</p>
         </li>
         <li>
           <h3 data-i18n="step3.t">Créez votre compte</h3>
@@ -452,11 +482,19 @@
         </li>
       </ol>
 
-      <div class="notice" role="note">
+      <div class="notice only-win" role="note">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
         <div>
           <strong data-i18n="smartscreen.t">Windows affiche « Windows a protégé votre ordinateur » ?</strong>
           <p data-i18n="smartscreen.d">C'est normal pour un nouveau logiciel. Cliquez sur « Informations complémentaires », puis sur « Exécuter quand même ».</p>
+        </div>
+      </div>
+
+      <div class="notice only-mac" role="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        <div>
+          <strong data-i18n="gatekeeper.t">macOS indique que Dentivo ne peut pas être ouvert ?</strong>
+          <p data-i18n="gatekeeper.d">C'est normal pour un logiciel installé hors de l'App Store. Ouvrez Réglages Système › Confidentialité et sécurité, puis cliquez sur « Ouvrir quand même ». Autorisez ensuite l'accès au réseau local : il sert à synchroniser les postes du cabinet.</p>
         </div>
       </div>
     </div>
@@ -468,7 +506,7 @@
       <div class="panel">
         <h3 data-i18n="req.title">Configuration requise</h3>
         <dl class="reqs">
-          <dt data-i18n="req.os">Système</dt><dd data-i18n="req.osV">Windows 10 ou 11, 64 bits</dd>
+          <dt data-i18n="req.os">Système</dt><dd data-i18n="req.osV">Windows 10 ou 11 (64 bits), ou macOS 11 et plus récent</dd>
           <dt data-i18n="req.ram">Mémoire</dt><dd data-i18n="req.ramV">4 Go de RAM minimum</dd>
           <dt data-i18n="req.disk">Espace disque</dt><dd data-i18n="req.diskV">1 Go libre</dd>
           <dt data-i18n="req.net">Internet</dt><dd data-i18n="req.netV">Non requis</dd>
@@ -519,7 +557,7 @@
         </details>
         <details>
           <summary data-i18n="faq.q5">Fonctionne-t-il sur Mac ?</summary>
-          <p data-i18n="faq.a5">Pas encore : Dentivo est disponible pour Windows. Contactez-nous si vous travaillez sur Mac.</p>
+          <p data-i18n="faq.a5">Oui : téléchargez la version Mac, pour les Mac à puce Apple comme pour les Mac Intel. Un Mac et un PC Windows du même cabinet se synchronisent entre eux.</p>
         </details>
       </div>
     </div>
@@ -573,6 +611,12 @@
       'card.sub': 'Version de démonstration',
       'card.badge': '7 jours',
       'card.cta': 'Télécharger pour Windows',
+      'card.osSwitch': "Système de l'ordinateur",
+      'card.ctaMac': 'Télécharger pour Mac (puce Apple)',
+      'card.ctaMacIntel': 'Mac avec processeur Intel',
+      'card.whichMac': 'Quel Mac ? Voir Menu Pomme › À propos de ce Mac.',
+      'card.sizeMac': '13 Mo',
+      'card.osMac': 'macOS 11 ou plus récent',
       'card.size': '225 Mo',
       'card.os': 'Windows 10 / 11 (64 bits)',
       'card.help': 'Un problème pour télécharger ?',
@@ -581,16 +625,20 @@
       'steps.sub': "Pas de serveur, pas de compte en ligne : tout s'installe sur le poste du cabinet.",
       'step1.t': 'Téléchargez',
       'step1.d': 'Cliquez sur « Télécharger pour Windows » et enregistrez le fichier dentivo-demo.exe.',
+      'step1.dMac': 'Cliquez sur « Télécharger pour Mac » (ou « Mac avec processeur Intel ») et ouvrez le fichier .dmg.',
       'step2.t': "Lancez l'installation",
       'step2.d': "Ouvrez le fichier téléchargé et suivez l'assistant, en français.",
+      'step2.dMac': 'Glissez Dentivo dans le dossier Applications, puis ouvrez-le depuis Applications.',
       'step3.t': 'Créez votre compte',
       'step3.d': 'Choisissez le rôle du poste (docteur ou secrétariat) et votre identifiant de connexion.',
       'step4.t': 'Travaillez 7 jours',
       'step4.d': 'Agenda, patients, schéma dentaire, ordonnances, paiements : tout est disponible.',
       'smartscreen.t': 'Windows affiche « Windows a protégé votre ordinateur » ?',
       'smartscreen.d': "C'est normal pour un nouveau logiciel. Cliquez sur « Informations complémentaires », puis sur « Exécuter quand même ».",
+      'gatekeeper.t': 'macOS indique que Dentivo ne peut pas être ouvert ?',
+      'gatekeeper.d': "C'est normal pour un logiciel installé hors de l'App Store. Ouvrez Réglages Système › Confidentialité et sécurité, puis cliquez sur « Ouvrir quand même ». Autorisez ensuite l'accès au réseau local : il sert à synchroniser les postes du cabinet.",
       'req.title': 'Configuration requise',
-      'req.os': 'Système', 'req.osV': 'Windows 10 ou 11, 64 bits',
+      'req.os': 'Système', 'req.osV': 'Windows 10 ou 11 (64 bits), ou macOS 11 et plus récent',
       'req.ram': 'Mémoire', 'req.ramV': '4 Go de RAM minimum',
       'req.disk': 'Espace disque', 'req.diskV': '1 Go libre',
       'req.net': 'Internet', 'req.netV': 'Non requis',
@@ -608,7 +656,7 @@
       'faq.q4': "Que se passe-t-il à la fin de l'essai ?",
       'faq.a4': "L'application se verrouille. Contactez-nous : nous installons la version complète et vous retrouvez toutes vos données.",
       'faq.q5': 'Fonctionne-t-il sur Mac ?',
-      'faq.a5': 'Pas encore : Dentivo est disponible pour Windows. Contactez-nous si vous travaillez sur Mac.',
+      'faq.a5': 'Oui : téléchargez la version Mac, pour les Mac à puce Apple comme pour les Mac Intel. Un Mac et un PC Windows du même cabinet se synchronisent entre eux.',
       'contact.title': "Une question avant d'essayer ?",
       'contact.body': 'Nous vous répondons rapidement sur WhatsApp, et pouvons faire une démonstration au cabinet ou en visio.',
       'footer.copy': '© 2026 Dentivo — Logiciel de gestion de cabinet dentaire.',
@@ -633,6 +681,12 @@
       'card.sub': 'Demo version',
       'card.badge': '7 days',
       'card.cta': 'Download for Windows',
+      'card.osSwitch': "Computer's system",
+      'card.ctaMac': 'Download for Mac (Apple chip)',
+      'card.ctaMacIntel': 'Mac with an Intel processor',
+      'card.whichMac': 'Which Mac? See Apple menu › About This Mac.',
+      'card.sizeMac': '13 MB',
+      'card.osMac': 'macOS 11 or later',
       'card.size': '225 MB',
       'card.os': 'Windows 10 / 11 (64-bit)',
       'card.help': 'Trouble downloading?',
@@ -641,16 +695,20 @@
       'steps.sub': 'No server, no online account: everything installs on the clinic computer.',
       'step1.t': 'Download',
       'step1.d': 'Click "Download for Windows" and save the dentivo-demo.exe file.',
+      'step1.dMac': 'Click "Download for Mac" (or "Mac with an Intel processor") and open the .dmg file.',
       'step2.t': 'Run the installer',
       'step2.d': 'Open the downloaded file and follow the wizard (in French).',
+      'step2.dMac': 'Drag Dentivo into the Applications folder, then open it from Applications.',
       'step3.t': 'Create your account',
       'step3.d': "Choose the computer's role (dentist or front desk) and your sign-in name.",
       'step4.t': 'Work for 7 days',
       'step4.d': 'Calendar, patients, dental chart, prescriptions, payments: everything is available.',
       'smartscreen.t': 'Windows says "Windows protected your PC"?',
       'smartscreen.d': 'That is normal for new software. Click "More info", then "Run anyway".',
+      'gatekeeper.t': 'macOS says Dentivo cannot be opened?',
+      'gatekeeper.d': "That is normal for software installed outside the App Store. Open System Settings › Privacy & Security, then click \"Open Anyway\". Then allow local network access: it keeps the clinic's computers in sync.",
       'req.title': 'System requirements',
-      'req.os': 'System', 'req.osV': 'Windows 10 or 11, 64-bit',
+      'req.os': 'System', 'req.osV': 'Windows 10 or 11 (64-bit), or macOS 11 and later',
       'req.ram': 'Memory', 'req.ramV': '4 GB RAM minimum',
       'req.disk': 'Disk space', 'req.diskV': '1 GB free',
       'req.net': 'Internet', 'req.netV': 'Not required',
@@ -668,7 +726,7 @@
       'faq.q4': 'What happens when the trial ends?',
       'faq.a4': 'The app locks. Contact us: we install the full version and all your data is still there.',
       'faq.q5': 'Does it run on Mac?',
-      'faq.a5': 'Not yet: Dentivo is available for Windows. Contact us if your clinic uses Mac.',
+      'faq.a5': 'Yes: download the Mac version, for Apple-chip and Intel Macs alike. A Mac and a Windows PC in the same clinic sync with each other.',
       'contact.title': 'A question before you try?',
       'contact.body': 'We reply quickly on WhatsApp, and can give a demonstration at your clinic or by video call.',
       'footer.copy': '© 2026 Dentivo — Dental practice management software.',
@@ -699,6 +757,18 @@
 
   document.getElementById('lang-fr').addEventListener('click', () => applyLang('fr'))
   document.getElementById('lang-en').addEventListener('click', () => applyLang('en'))
+
+  // ---------- Windows / Mac ----------
+  function applyOs(os) {
+    document.documentElement.setAttribute('data-os', os)
+    document.getElementById('os-win').setAttribute('aria-pressed', String(os === 'win'))
+    document.getElementById('os-mac').setAttribute('aria-pressed', String(os === 'mac'))
+  }
+  document.getElementById('os-win').addEventListener('click', () => applyOs('win'))
+  document.getElementById('os-mac').addEventListener('click', () => applyOs('mac'))
+  // An iPad also reports "Macintosh"; it has a touch screen, a Mac does not.
+  const onMac = /Macintosh|Mac OS X/.test(navigator.userAgent) && navigator.maxTouchPoints < 2
+  applyOs(onMac ? 'mac' : 'win')
 
   // ---------- Theme ----------
   function resolvedTheme() {
