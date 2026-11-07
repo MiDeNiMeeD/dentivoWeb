@@ -755,6 +755,34 @@
       to { opacity: 1; transform: none; }
     }
   }
+
+  /* Product family */
+  a.feature { display: block; color: inherit; text-decoration: none; }
+  a.feature:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .product { display: flex; flex-direction: column; }
+  .product .p-tag {
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--brand-primary);
+    margin-bottom: 4px;
+  }
+  .product p { flex: 1; }
+  .product .p-more { margin-top: 14px; font-size: 13.5px; font-weight: 600; color: var(--text-link); }
+  .product:hover .p-more { text-decoration: underline; }
+  .p-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--brand-primary-subtle);
+    border: 1px solid var(--brand-primary-border);
+    color: var(--brand-primary);
+    font-size: 12.5px;
+    font-weight: 650;
+  }
+  .product-section { border-top: 1px solid var(--border-subtle); }
 </style>
 </head>
 <body>
@@ -766,10 +794,10 @@
     </a>
 
     <nav class="nav-links" aria-label="Navigation">
+      <a href="#products" data-i18n="nav.products">Logiciels</a>
       <a href="#features" data-i18n="nav.features">Fonctionnalités</a>
-      <a href="#security" data-i18n="nav.security">Vos données</a>
       <a href="#video" data-i18n="nav.video">Vidéo</a>
-      <a href="#screens" data-i18n="nav.screens">Captures</a>
+      <a href="#security" data-i18n="nav.security">Vos données</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
 
@@ -794,19 +822,17 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow" data-i18n="hero.eyebrow">Logiciel de gestion de cabinet dentaire</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Logiciels pour cabinets dentaires</p>
         <h1>
-          <span data-i18n="hero.title1">Le dossier de vos patients,</span>
-          <span class="accent" data-i18n="hero.title2">au même endroit.</span>
+          <span data-i18n="hero.title1">Tout le cabinet,</span>
+          <span class="accent" data-i18n="hero.title2">de l'agenda au scan 3D.</span>
         </h1>
         <p class="lede" data-i18n="hero.lede">
-          Agenda, schéma dentaire, devis, ordonnances, laboratoire, stock et paiements —
-          Dentivo réunit tout le cabinet dans une application rapide, qui fonctionne
-          hors ligne, sur vos propres postes.
+          Gestion du cabinet, radios et photos, CBCT et empreintes optiques : les logiciels Dentivo travaillent ensemble, hors ligne, sur vos propres postes — et tous les PC du cabinet restent à jour entre eux.
         </p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#contact" data-i18n="hero.ctaDemo">Contactez-nous</a>
-          <a class="btn btn-secondary" href="#features" data-i18n="hero.ctaFeatures">Découvrir les fonctionnalités</a>
+          <a class="btn btn-secondary" href="#products" data-i18n="hero.ctaFeatures">Découvrir les logiciels</a>
         </div>
       </div>
 
@@ -829,10 +855,57 @@
             <span data-i18n="trust.local">Données stockées au cabinet</span>
           </li>
           <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
-            <span data-i18n="trust.bilingual">Français &amp; anglais</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg>
+            <span data-i18n="trust.sync">Tous les postes synchronisés</span>
           </li>
         </ul>
+    </div>
+  </section>
+
+  <!-- ============ Products ============ -->
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="products.title">La famille Dentivo</h2>
+        <p data-i18n="products.sub">Cinq logiciels qui partagent les mêmes patients. Commencez par la gestion du cabinet, ajoutez l'imagerie quand vous en avez besoin.</p>
+      </div>
+      <div class="features products">
+          <a class="feature product" href="#features">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.5-1.6-3.5-2.5-5.2-2.2C4 3.8 2.6 6 3 9c.5 3.6 2 10 3.8 11.6.8.7 1.9.3 2.1-.7l.9-4.6c.2-1.2 2.2-1.2 2.4 0l.9 4.6c.2 1 1.3 1.4 2.1.7C17 19 18.5 12.6 19 9c.4-3-1-5.2-3.8-5.7-1.7-.3-3.7.6-5.2 2.2Z"/></svg></span>
+            <span class="p-tag" data-i18n="p.main.tag">Gestion du cabinet</span>
+            <h3 data-i18n="p.main.name">Dentivo</h3>
+            <p data-i18n="p.main.d">Dossiers patients, agenda, schéma dentaire, devis, ordonnances, laboratoire, paiements, stock et rapports.</p>
+            <span class="p-more" data-i18n="products.more">En savoir plus</span>
+          </a>
+          <a class="feature product" href="#imaging">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span>
+            <span class="p-tag" data-i18n="p.imaging.tag">Radios &amp; photos</span>
+            <h3 data-i18n="p.imaging.name">Dentivo Imaging</h3>
+            <p data-i18n="p.imaging.d">Capteurs RX, scanners de plaques et caméras intra-orales : l'image arrive directement dans le dossier du patient.</p>
+            <span class="p-more" data-i18n="products.more">En savoir plus</span>
+          </a>
+          <a class="feature product" href="#dicom">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg></span>
+            <span class="p-tag" data-i18n="p.dicom.tag">CBCT &amp; 3D</span>
+            <h3 data-i18n="p.dicom.name">Dentivo DICOM</h3>
+            <p data-i18n="p.dicom.d">Importez les CD et les exports CBCT, parcourez le volume en coupes et en 3D, obtenez une panoramique reconstruite.</p>
+            <span class="p-more" data-i18n="products.more">En savoir plus</span>
+          </a>
+          <a class="feature product" href="#scan3d">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span>
+            <span class="p-tag" data-i18n="p.scan.tag">Empreintes optiques</span>
+            <h3 data-i18n="p.scan.name">Dentivo Scan 3D</h3>
+            <p data-i18n="p.scan.d">Un cas par empreinte, visualisation 3D et mesures, commande au laboratoire en un clic. Fonctionne avec Medit Link.</p>
+            <span class="p-more" data-i18n="products.more">En savoir plus</span>
+          </a>
+          <a class="feature product" href="#server">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg></span>
+            <span class="p-tag" data-i18n="p.server.tag">Plusieurs postes</span>
+            <h3 data-i18n="p.server.name">Dentivo Server</h3>
+            <p data-i18n="p.server.d">Installé sur chaque PC, il garde tous les postes du cabinet à jour entre eux, sur le réseau local, sans cloud.</p>
+            <span class="p-more" data-i18n="products.more">En savoir plus</span>
+          </a>
+      </div>
     </div>
   </section>
 
@@ -840,6 +913,7 @@
   <section id="features">
     <div class="wrap">
       <div class="section-head">
+        <span class="p-badge" data-i18n="p.main.badge">Dentivo · gestion du cabinet</span>
         <h2 data-i18n="features.title">Tout le cabinet, un seul outil</h2>
         <p data-i18n="features.sub">Du fauteuil à la comptabilité — chaque module reprend le travail réel du cabinet.</p>
       </div>
@@ -947,46 +1021,6 @@
       </div>
       <div class="show-more-row">
         <button type="button" class="btn btn-secondary show-more" data-target="features-grid" aria-expanded="false">Afficher plus</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ Data stays local ============ -->
-  <section id="security">
-    <div class="wrap split">
-      <div>
-        <div class="section-head" style="margin-bottom: 0;">
-          <h2 data-i18n="security.title">Vos données ne quittent jamais le cabinet</h2>
-          <p data-i18n="security.sub">Pas de cloud, pas d'abonnement serveur, pas de dossier médical qui voyage. Dentivo s'installe sur vos postes et y reste.</p>
-        </div>
-        <ul class="checks">
-          <li>
-            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span><strong data-i18n="security.b1t">Base locale.</strong> <span data-i18n="security.b1d">Tous les dossiers vivent dans un seul dossier sur votre machine.</span></span>
-          </li>
-          <li>
-            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span><strong data-i18n="security.b5t">Synchronisation entre postes.</strong> <span data-i18n="security.b5d">Les PC du cabinet restent à jour entre eux, directement sur le réseau local — sans cloud ni internet.</span></span>
-          </li>
-          <li>
-            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span><strong data-i18n="security.b2t">Journal d'audit intégré.</strong> <span data-i18n="security.b2d">Chaque écriture est tracée : qui, quoi, quand — rien ne disparaît en silence.</span></span>
-          </li>
-          <li>
-            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span><strong data-i18n="security.b3t">Sauvegarde triviale.</strong> <span data-i18n="security.b3d">Sauvegarder, c'est copier un dossier. Sur une clé USB si vous voulez.</span></span>
-          </li>
-          <li>
-            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span><strong data-i18n="security.b4t">Comptes protégés.</strong> <span data-i18n="security.b4d">Mots de passe hachés, verrouillage après tentatives échouées, accès réglable compte par compte.</span></span>
-          </li>
-        </ul>
-      </div>
-      <div class="img-loader">
-        <img class="section-photo" src="public/dentistry-team-office.jpg" alt="" loading="lazy" />
-        <span class="img-spinner" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
-        </span>
       </div>
     </div>
   </section>
@@ -1128,6 +1162,218 @@
     </div>
   </section>
 
+  <!-- ============ Dentivo Imaging ============ -->
+  <section id="imaging" class="product-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="p-badge" data-i18n="imaging.badge">Dentivo Imaging</span>
+        <h2 data-i18n="imaging.title">Vos radios et vos photos, dans le dossier du patient</h2>
+        <p data-i18n="imaging.sub">Acquisition, traitement et archivage des radiographies, photos intra-orales et vidéos. Les patients viennent de Dentivo : rien à ressaisir.</p>
+      </div>
+      <div class="features">
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span>
+            <h3 data-i18n="imaging.f1.t">Capteurs RX et scanners de plaques</h3>
+            <p data-i18n="imaging.f1.d">Pilotés par leur pilote TWAIN (SOPIX, PSPIX…) : chaque cliché arrive dans le dossier du patient.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span>
+            <h3 data-i18n="imaging.f2.t">Caméras intra-orales</h3>
+            <p data-i18n="imaging.f2.d">Toute caméra reconnue par Windows. La photo se prend d'une touche.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>
+            <h3 data-i18n="imaging.f3.t">Dossier surveillé</h3>
+            <p data-i18n="imaging.f3.d">Pour tout appareil qui enregistre des fichiers : les nouvelles images rejoignent le patient ouvert à l'écran.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></span>
+            <h3 data-i18n="imaging.f4.t">L'original n'est jamais modifié</h3>
+            <p data-i18n="imaging.f4.d">Luminosité, contraste, filtres, rotation et annotations s'appliquent à l'affichage ; le cliché d'origine reste intact.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg></span>
+            <h3 data-i18n="imaging.f5.t">Rien ne se perd</h3>
+            <p data-i18n="imaging.f5.d">Les images supprimées vont dans une corbeille d'où on les restaure. Les radios peuvent être protégées contre toute suppression.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg></span>
+            <h3 data-i18n="imaging.f6.t">Sur tous les postes</h3>
+            <p data-i18n="imaging.f6.d">Avec Dentivo Server, une radio prise au fauteuil est visible en quelques secondes sur les autres PC du cabinet.</p>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Dentivo DICOM ============ -->
+  <section id="dicom" class="product-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="p-badge" data-i18n="dicom.badge">Dentivo DICOM</span>
+        <h2 data-i18n="dicom.title">Le CBCT et les CD de radiologie, lus au cabinet</h2>
+        <p data-i18n="dicom.sub">Importez les examens DICOM, explorez les volumes 3D et gardez-les dans le dossier du patient.</p>
+      </div>
+      <div class="features">
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="2"/></svg></span>
+            <h3 data-i18n="dicom.f1.t">CD et exports CBCT</h3>
+            <p data-i18n="dicom.f1.d">Importez un dossier entier, comme le CD d'un centre de radiologie. Fichiers compressés (JPEG, JPEG 2000, RLE) acceptés.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <h3 data-i18n="dicom.f2.t">Contrôle du patient</h3>
+            <p data-i18n="dicom.f2.d">Avant l'import, le nom et la date de naissance du fichier sont comparés au dossier : un examen d'un autre patient est signalé.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span>
+            <h3 data-i18n="dicom.f3.t">Coupes et rendu 3D</h3>
+            <p data-i18n="dicom.f3.d">Coupes axiales, coronales et sagittales, et un rendu 3D du volume que l'on fait tourner.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8c3 6 17 6 20 0"/><path d="M5 14c2.5 3 11.5 3 14 0"/></svg></span>
+            <h3 data-i18n="dicom.f4.t">Panoramique reconstruite</h3>
+            <p data-i18n="dicom.f4.d">Chaque volume CBCT donne une panoramique reconstruite le long de l'arcade dentaire.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m17 8-5-5-5 5"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg></span>
+            <h3 data-i18n="dicom.f5.t">Export DICOM</h3>
+            <p data-i18n="dicom.f5.d">Renvoyez une image ou un examen au format DICOM, pour un confrère ou un centre.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg></span>
+            <h3 data-i18n="dicom.f6.t">Sur tous les postes</h3>
+            <p data-i18n="dicom.f6.d">Avec Dentivo Server, les examens et chaque coupe des volumes se retrouvent sur les autres PC du cabinet.</p>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Dentivo Scan 3D ============ -->
+  <section id="scan3d" class="product-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="p-badge" data-i18n="scan.badge">Dentivo Scan 3D</span>
+        <h2 data-i18n="scan.title">Vos empreintes optiques, rangées et prêtes pour le labo</h2>
+        <p data-i18n="scan.sub">Dentivo Scan 3D fonctionne avec Medit Link : le scan se fait dans Medit Link, tout le reste se fait dans Dentivo Scan 3D.</p>
+      </div>
+      <div class="features">
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg></span>
+            <h3 data-i18n="scan.f1.t">Un cas par empreinte</h3>
+            <p data-i18n="scan.f1.d">Les cas sont rangés dans le dossier du patient, qui vient directement de Dentivo.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4Z"/></svg></span>
+            <h3 data-i18n="scan.f2.t">Lancer le scan</h3>
+            <p data-i18n="scan.f2.d">Depuis un cas, le patient est envoyé à Medit Link, affiché dans l'écran de scan. Les scans reviennent seuls dans le cas.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>
+            <h3 data-i18n="scan.f3.t">STL, PLY et OBJ</h3>
+            <p data-i18n="scan.f3.d">Les fichiers déposés dans le dossier surveillé rejoignent le cas ou le patient ouvert à l'écran.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2M11.5 9.5l2-2M8.5 6.5l2-2M17.5 15.5l2-2"/></svg></span>
+            <h3 data-i18n="scan.f4.t">Visualisation 3D et mesures</h3>
+            <p data-i18n="scan.f4.d">Faites tourner les modèles et mesurez directement sur le scan.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>
+            <h3 data-i18n="scan.f5.t">Commande au laboratoire</h3>
+            <p data-i18n="scan.f5.d">Un clic prépare l'envoi : les scans, le bon de commande en PDF et l'e-mail au laboratoire.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+            <h3 data-i18n="scan.f6.t">Sur le PC du scanner</h3>
+            <p data-i18n="scan.f6.d">Dentivo Scan 3D s'installe sur le poste relié au scanner, là où se trouve Medit Link.</p>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Dentivo Server ============ -->
+  <section id="server" class="product-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="p-badge" data-i18n="server.badge">Dentivo Server</span>
+        <h2 data-i18n="server.title">Tous les postes du cabinet, toujours à jour</h2>
+        <p data-i18n="server.sub">Dentivo Server s'installe sur chaque PC du cabinet. Il relie Dentivo, Dentivo Imaging et Dentivo DICOM d'un poste à l'autre, sur le réseau local, sans cloud ni internet.</p>
+      </div>
+      <div class="features">
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2"/></svg></span>
+            <h3 data-i18n="server.f1.t">Chaque PC a une copie complète</h3>
+            <p data-i18n="server.f1.d">Chaque poste garde toutes les données et continue de travailler même si un autre est éteint.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg></span>
+            <h3 data-i18n="server.f2.t">En quelques secondes</h3>
+            <p data-i18n="server.f2.d">Un rendez-vous pris à l'accueil apparaît au fauteuil en quelques secondes ; les écrans se mettent à jour seuls.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2l8 9.46V19l4 2v-8.54Z"/></svg></span>
+            <h3 data-i18n="server.f3.t">Vous choisissez qui reçoit quoi</h3>
+            <p data-i18n="server.f3.d">Agenda, clinique, finances, stock, radios : pour chaque PC, vous décidez des données qu'il reçoit.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span>
+            <h3 data-i18n="server.f4.t">Ajouter ou retirer un PC</h3>
+            <p data-i18n="server.f4.d">Un nouveau poste rejoint le cabinet avec un code ; un poste retiré ne reçoit plus rien.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <h3 data-i18n="server.f5.t">Échanges chiffrés</h3>
+            <p data-i18n="server.f5.d">Les données circulent chiffrées, uniquement sur le réseau local du cabinet.</p>
+          </article>
+          <article class="feature">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg></span>
+            <h3 data-i18n="server.f6.t">Toujours en marche</h3>
+            <p data-i18n="server.f6.d">Il démarre avec Windows, avant même la connexion, et passe par un autre PC quand deux postes ne se voient pas.</p>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Data stays local ============ -->
+  <section id="security">
+    <div class="wrap split">
+      <div>
+        <div class="section-head" style="margin-bottom: 0;">
+          <h2 data-i18n="security.title">Vos données ne quittent jamais le cabinet</h2>
+          <p data-i18n="security.sub">Pas de cloud, pas d'abonnement serveur, pas de dossier médical qui voyage. Les logiciels Dentivo s'installent sur vos postes et y restent.</p>
+        </div>
+        <ul class="checks">
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span><strong data-i18n="security.b1t">Base locale.</strong> <span data-i18n="security.b1d">Tous les dossiers vivent dans un seul dossier sur votre machine.</span></span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span><strong data-i18n="security.b5t">Tous les postes à jour.</strong> <span data-i18n="security.b5d">Avec Dentivo Server, chaque PC du cabinet garde une copie complète et reçoit les changements des autres en quelques secondes — sur le réseau local, sans internet.</span></span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span><strong data-i18n="security.b2t">Journal d'audit intégré.</strong> <span data-i18n="security.b2d">Chaque écriture est tracée : qui, quoi, quand — rien ne disparaît en silence.</span></span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span><strong data-i18n="security.b3t">Sauvegarde simple.</strong> <span data-i18n="security.b3d">Chaque PC est déjà une copie des données du cabinet. En plus, sauvegarder, c'est copier un dossier — sur une clé USB si vous voulez.</span></span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <span><strong data-i18n="security.b4t">Comptes protégés.</strong> <span data-i18n="security.b4d">Mots de passe hachés, verrouillage après tentatives échouées, accès réglable compte par compte.</span></span>
+          </li>
+        </ul>
+      </div>
+      <div class="img-loader">
+        <img class="section-photo" src="public/dentistry-team-office.jpg" alt="" loading="lazy" />
+        <span class="img-spinner" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+        </span>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ Contact ============ -->
   <section id="contact">
     <div class="wrap">
@@ -1159,7 +1405,7 @@
 
 <footer>
   <div class="wrap">
-    <span data-i18n="footer.copy">© 2026 Dentivo — Logiciel de gestion de cabinet dentaire.</span>
+    <span data-i18n="footer.copy">© 2026 Dentivo — Logiciels pour cabinets dentaires.</span>
     <span data-i18n="footer.made">Conçu pour les cabinets dentaires. Hors ligne · FR/EN</span>
   </div>
 </footer>
@@ -1168,23 +1414,23 @@
   // ---------- Translations ----------
   const I18N = {
     fr: {
-      'nav.video': 'Vidéo',
-      'nav.features': 'Fonctionnalités',
+      'nav.video': "Vidéo",
+      'nav.features': "Fonctionnalités",
       'video.title': 'Dentivo en action',
       'video.sub': 'Une minute pour découvrir tout le cabinet dans un seul logiciel.',
       'video.play': 'Lire la vidéo de présentation',
       'video.onYoutube': 'Voir sur YouTube',
-      'nav.security': 'Vos données',
+      'nav.security': "Vos données",
       'nav.screens': 'Captures',
-      'nav.contact': 'Contact',
+      'nav.contact': "Contact",
       'nav.download': 'Télécharger la démo',
       'theme.toggle': 'Changer de thème',
-      'hero.eyebrow': 'Logiciel de gestion de cabinet dentaire',
-      'hero.title1': 'Le dossier de vos patients,',
-      'hero.title2': 'au même endroit.',
-      'hero.lede': "Agenda, schéma dentaire, devis, ordonnances, laboratoire, stock et paiements — Dentivo réunit tout le cabinet dans une application rapide, qui fonctionne hors ligne, sur vos propres postes.",
+      'hero.eyebrow': "Logiciels pour cabinets dentaires",
+      'hero.title1': "Tout le cabinet,",
+      'hero.title2': "de l'agenda au scan 3D.",
+      'hero.lede': "Gestion du cabinet, radios et photos, CBCT et empreintes optiques : les logiciels Dentivo travaillent ensemble, hors ligne, sur vos propres postes — et tous les PC du cabinet restent à jour entre eux.",
       'hero.ctaDemo': 'Contactez-nous',
-      'hero.ctaFeatures': 'Découvrir les fonctionnalités',
+      'hero.ctaFeatures': "Découvrir les logiciels",
       'trust.offline': '100 % hors ligne',
       'trust.local': 'Données stockées au cabinet',
       'trust.bilingual': 'Français & anglais',
@@ -1228,15 +1474,15 @@
       'f.staff.t': 'Équipe & accès',
       'f.staff.d': "Comptes secrétaires, modules visibles réglés compte par compte, sessions et journal d'activité.",
       'security.title': 'Vos données ne quittent jamais le cabinet',
-      'security.sub': "Pas de cloud, pas d'abonnement serveur, pas de dossier médical qui voyage. Dentivo s'installe sur vos postes et y reste.",
+      'security.sub': "Pas de cloud, pas d'abonnement serveur, pas de dossier médical qui voyage. Les logiciels Dentivo s'installent sur vos postes et y restent.",
       'security.b1t': 'Base locale.',
       'security.b1d': 'Tous les dossiers vivent dans un seul dossier sur votre machine.',
-      'security.b5t': 'Synchronisation entre postes.',
-      'security.b5d': 'Les PC du cabinet restent à jour entre eux, directement sur le réseau local — sans cloud ni internet.',
+      'security.b5t': "Tous les postes à jour.",
+      'security.b5d': "Avec Dentivo Server, chaque PC du cabinet garde une copie complète et reçoit les changements des autres en quelques secondes — sur le réseau local, sans internet.",
       'security.b2t': "Journal d'audit intégré.",
       'security.b2d': 'Chaque écriture est tracée : qui, quoi, quand — rien ne disparaît en silence.',
-      'security.b3t': 'Sauvegarde triviale.',
-      'security.b3d': "Sauvegarder, c'est copier un dossier. Sur une clé USB si vous voulez.",
+      'security.b3t': "Sauvegarde simple.",
+      'security.b3d': "Chaque PC est déjà une copie des données du cabinet. En plus, sauvegarder, c'est copier un dossier — sur une clé USB si vous voulez.",
       'security.b4t': 'Comptes protégés.',
       'security.b4d': 'Mots de passe hachés, verrouillage après tentatives échouées, accès réglable compte par compte.',
       'common.showMore': 'Afficher plus',
@@ -1263,27 +1509,108 @@
       'cta.fbHandle': 'Suivez-nous',
       'cta.ytHandle': 'Nos vidéos',
       'cta.note': 'Remplacez ces liens et identifiants par vos propres comptes.',
-      'footer.copy': '© 2026 Dentivo — Logiciel de gestion de cabinet dentaire.',
+      'footer.copy': "© 2026 Dentivo — Logiciels pour cabinets dentaires.",
       'footer.made': 'Conçu pour les cabinets dentaires. Hors ligne · FR/EN',
+      'nav.products': "Logiciels",
+      'trust.sync': "Tous les postes synchronisés",
+      'products.title': "La famille Dentivo",
+      'products.sub': "Cinq logiciels qui partagent les mêmes patients. Commencez par la gestion du cabinet, ajoutez l'imagerie quand vous en avez besoin.",
+      'products.more': "En savoir plus",
+      'p.main.name': "Dentivo",
+      'p.main.tag': "Gestion du cabinet",
+      'p.main.d': "Dossiers patients, agenda, schéma dentaire, devis, ordonnances, laboratoire, paiements, stock et rapports.",
+      'p.imaging.name': "Dentivo Imaging",
+      'p.imaging.tag': "Radios & photos",
+      'p.imaging.d': "Capteurs RX, scanners de plaques et caméras intra-orales : l'image arrive directement dans le dossier du patient.",
+      'p.dicom.name': "Dentivo DICOM",
+      'p.dicom.tag': "CBCT & 3D",
+      'p.dicom.d': "Importez les CD et les exports CBCT, parcourez le volume en coupes et en 3D, obtenez une panoramique reconstruite.",
+      'p.scan.name': "Dentivo Scan 3D",
+      'p.scan.tag': "Empreintes optiques",
+      'p.scan.d': "Un cas par empreinte, visualisation 3D et mesures, commande au laboratoire en un clic. Fonctionne avec Medit Link.",
+      'p.server.name': "Dentivo Server",
+      'p.server.tag': "Plusieurs postes",
+      'p.server.d': "Installé sur chaque PC, il garde tous les postes du cabinet à jour entre eux, sur le réseau local, sans cloud.",
+      'p.main.badge': "Dentivo · gestion du cabinet",
+      'imaging.badge': "Dentivo Imaging",
+      'imaging.title': "Vos radios et vos photos, dans le dossier du patient",
+      'imaging.sub': "Acquisition, traitement et archivage des radiographies, photos intra-orales et vidéos. Les patients viennent de Dentivo : rien à ressaisir.",
+      'imaging.f1.t': "Capteurs RX et scanners de plaques",
+      'imaging.f1.d': "Pilotés par leur pilote TWAIN (SOPIX, PSPIX…) : chaque cliché arrive dans le dossier du patient.",
+      'imaging.f2.t': "Caméras intra-orales",
+      'imaging.f2.d': "Toute caméra reconnue par Windows. La photo se prend d'une touche.",
+      'imaging.f3.t': "Dossier surveillé",
+      'imaging.f3.d': "Pour tout appareil qui enregistre des fichiers : les nouvelles images rejoignent le patient ouvert à l'écran.",
+      'imaging.f4.t': "L'original n'est jamais modifié",
+      'imaging.f4.d': "Luminosité, contraste, filtres, rotation et annotations s'appliquent à l'affichage ; le cliché d'origine reste intact.",
+      'imaging.f5.t': "Rien ne se perd",
+      'imaging.f5.d': "Les images supprimées vont dans une corbeille d'où on les restaure. Les radios peuvent être protégées contre toute suppression.",
+      'imaging.f6.t': "Sur tous les postes",
+      'imaging.f6.d': "Avec Dentivo Server, une radio prise au fauteuil est visible en quelques secondes sur les autres PC du cabinet.",
+      'dicom.badge': "Dentivo DICOM",
+      'dicom.title': "Le CBCT et les CD de radiologie, lus au cabinet",
+      'dicom.sub': "Importez les examens DICOM, explorez les volumes 3D et gardez-les dans le dossier du patient.",
+      'dicom.f1.t': "CD et exports CBCT",
+      'dicom.f1.d': "Importez un dossier entier, comme le CD d'un centre de radiologie. Fichiers compressés (JPEG, JPEG 2000, RLE) acceptés.",
+      'dicom.f2.t': "Contrôle du patient",
+      'dicom.f2.d': "Avant l'import, le nom et la date de naissance du fichier sont comparés au dossier : un examen d'un autre patient est signalé.",
+      'dicom.f3.t': "Coupes et rendu 3D",
+      'dicom.f3.d': "Coupes axiales, coronales et sagittales, et un rendu 3D du volume que l'on fait tourner.",
+      'dicom.f4.t': "Panoramique reconstruite",
+      'dicom.f4.d': "Chaque volume CBCT donne une panoramique reconstruite le long de l'arcade dentaire.",
+      'dicom.f5.t': "Export DICOM",
+      'dicom.f5.d': "Renvoyez une image ou un examen au format DICOM, pour un confrère ou un centre.",
+      'dicom.f6.t': "Sur tous les postes",
+      'dicom.f6.d': "Avec Dentivo Server, les examens et chaque coupe des volumes se retrouvent sur les autres PC du cabinet.",
+      'scan.badge': "Dentivo Scan 3D",
+      'scan.title': "Vos empreintes optiques, rangées et prêtes pour le labo",
+      'scan.sub': "Dentivo Scan 3D fonctionne avec Medit Link : le scan se fait dans Medit Link, tout le reste se fait dans Dentivo Scan 3D.",
+      'scan.f1.t': "Un cas par empreinte",
+      'scan.f1.d': "Les cas sont rangés dans le dossier du patient, qui vient directement de Dentivo.",
+      'scan.f2.t': "Lancer le scan",
+      'scan.f2.d': "Depuis un cas, le patient est envoyé à Medit Link, affiché dans l'écran de scan. Les scans reviennent seuls dans le cas.",
+      'scan.f3.t': "STL, PLY et OBJ",
+      'scan.f3.d': "Les fichiers déposés dans le dossier surveillé rejoignent le cas ou le patient ouvert à l'écran.",
+      'scan.f4.t': "Visualisation 3D et mesures",
+      'scan.f4.d': "Faites tourner les modèles et mesurez directement sur le scan.",
+      'scan.f5.t': "Commande au laboratoire",
+      'scan.f5.d': "Un clic prépare l'envoi : les scans, le bon de commande en PDF et l'e-mail au laboratoire.",
+      'scan.f6.t': "Sur le PC du scanner",
+      'scan.f6.d': "Dentivo Scan 3D s'installe sur le poste relié au scanner, là où se trouve Medit Link.",
+      'server.badge': "Dentivo Server",
+      'server.title': "Tous les postes du cabinet, toujours à jour",
+      'server.sub': "Dentivo Server s'installe sur chaque PC du cabinet. Il relie Dentivo, Dentivo Imaging et Dentivo DICOM d'un poste à l'autre, sur le réseau local, sans cloud ni internet.",
+      'server.f1.t': "Chaque PC a une copie complète",
+      'server.f1.d': "Chaque poste garde toutes les données et continue de travailler même si un autre est éteint.",
+      'server.f2.t': "En quelques secondes",
+      'server.f2.d': "Un rendez-vous pris à l'accueil apparaît au fauteuil en quelques secondes ; les écrans se mettent à jour seuls.",
+      'server.f3.t': "Vous choisissez qui reçoit quoi",
+      'server.f3.d': "Agenda, clinique, finances, stock, radios : pour chaque PC, vous décidez des données qu'il reçoit.",
+      'server.f4.t': "Ajouter ou retirer un PC",
+      'server.f4.d': "Un nouveau poste rejoint le cabinet avec un code ; un poste retiré ne reçoit plus rien.",
+      'server.f5.t': "Échanges chiffrés",
+      'server.f5.d': "Les données circulent chiffrées, uniquement sur le réseau local du cabinet.",
+      'server.f6.t': "Toujours en marche",
+      'server.f6.d': "Il démarre avec Windows, avant même la connexion, et passe par un autre PC quand deux postes ne se voient pas.",
     },
     en: {
-      'nav.video': 'Video',
-      'nav.features': 'Features',
+      'nav.video': "Video",
+      'nav.features': "Features",
       'video.title': 'Dentivo in action',
       'video.sub': 'One minute to see the whole practice in a single application.',
       'video.play': 'Play the presentation video',
       'video.onYoutube': 'Watch on YouTube',
-      'nav.security': 'Your data',
+      'nav.security': "Your data",
       'nav.screens': 'Screenshots',
-      'nav.contact': 'Contact',
+      'nav.contact': "Contact",
       'nav.download': 'Download the demo',
       'theme.toggle': 'Toggle theme',
-      'hero.eyebrow': 'Dental practice management software',
-      'hero.title1': 'Your patient records,',
-      'hero.title2': 'in one place.',
-      'hero.lede': 'Calendar, dental chart, quotes, prescriptions, lab work, inventory and payments — Dentivo brings the whole practice into one fast application that works offline, on your own computers.',
+      'hero.eyebrow': "Software for dental practices",
+      'hero.title1': "The whole practice,",
+      'hero.title2': "from calendar to 3D scan.",
+      'hero.lede': "Practice management, X-rays and photos, CBCT and optical impressions: the Dentivo software works together, offline, on your own computers — and every PC in the practice stays up to date.",
       'hero.ctaDemo': 'Contact us',
-      'hero.ctaFeatures': 'Explore the features',
+      'hero.ctaFeatures': "Explore the software",
       'trust.offline': '100% offline',
       'trust.local': 'Data stays in the clinic',
       'trust.bilingual': 'French & English',
@@ -1327,15 +1654,15 @@
       'f.staff.t': 'Team & access',
       'f.staff.d': 'Secretary accounts, visible modules set per account, sessions and activity log.',
       'security.title': 'Your data never leaves the clinic',
-      'security.sub': 'No cloud, no server subscription, no medical record travelling anywhere. Dentivo installs on your computers and stays there.',
+      'security.sub': "No cloud, no server subscription, no medical record travelling anywhere. Dentivo software installs on your computers and stays there.",
       'security.b1t': 'Local database.',
       'security.b1d': 'Every record lives in a single folder on your machine.',
-      'security.b5t': 'Sync between computers.',
-      'security.b5d': "The clinic's PCs stay in step with each other, directly over the local network — no cloud, no internet.",
+      'security.b5t': "Every computer up to date.",
+      'security.b5d': "With Dentivo Server, every PC in the practice keeps a full copy and receives the others' changes within seconds — over the local network, without the internet.",
       'security.b2t': 'Built-in audit log.',
       'security.b2d': 'Every write is traced: who, what, when — nothing disappears silently.',
-      'security.b3t': 'Trivial backups.',
-      'security.b3d': 'Backing up means copying one folder. To a USB stick if you like.',
+      'security.b3t': "Simple backups.",
+      'security.b3d': "Every PC is already a copy of the practice's data. On top of that, backing up means copying one folder — to a USB stick if you like.",
       'security.b4t': 'Protected accounts.',
       'security.b4d': 'Hashed passwords, lockout after failed attempts, access set per account.',
       'common.showMore': 'Show more',
@@ -1362,8 +1689,89 @@
       'cta.fbHandle': 'Follow us',
       'cta.ytHandle': 'Our videos',
       'cta.note': 'Replace these links and handles with your own accounts.',
-      'footer.copy': '© 2026 Dentivo — Dental practice management software.',
+      'footer.copy': "© 2026 Dentivo — Software for dental practices.",
       'footer.made': 'Built for dental clinics. Offline · FR/EN',
+      'nav.products': "Products",
+      'trust.sync': "Every computer in sync",
+      'products.title': "The Dentivo family",
+      'products.sub': "Five applications that share the same patients. Start with practice management, add imaging when you need it.",
+      'products.more': "Learn more",
+      'p.main.name': "Dentivo",
+      'p.main.tag': "Practice management",
+      'p.main.d': "Patient records, calendar, dental chart, quotes, prescriptions, lab work, payments, inventory and reports.",
+      'p.imaging.name': "Dentivo Imaging",
+      'p.imaging.tag': "X-rays & photos",
+      'p.imaging.d': "X-ray sensors, plate scanners and intraoral cameras: the image goes straight into the patient's file.",
+      'p.dicom.name': "Dentivo DICOM",
+      'p.dicom.tag': "CBCT & 3D",
+      'p.dicom.d': "Import CDs and CBCT exports, browse the volume in slices and in 3D, get a rebuilt panoramic.",
+      'p.scan.name': "Dentivo Scan 3D",
+      'p.scan.tag': "Optical impressions",
+      'p.scan.d': "One case per impression, 3D viewing and measuring, lab orders in one click. Works with Medit Link.",
+      'p.server.name': "Dentivo Server",
+      'p.server.tag': "Several computers",
+      'p.server.d': "Installed on every PC, it keeps all the practice's computers up to date with each other, over the local network, without the cloud.",
+      'p.main.badge': "Dentivo · practice management",
+      'imaging.badge': "Dentivo Imaging",
+      'imaging.title': "Your X-rays and photos, in the patient's file",
+      'imaging.sub': "Capture, processing and archiving of X-rays, intraoral photos and video. Patients come from Dentivo: nothing to type twice.",
+      'imaging.f1.t': "X-ray sensors and plate scanners",
+      'imaging.f1.d': "Driven through their TWAIN driver (SOPIX, PSPIX…): each image goes into the patient's file.",
+      'imaging.f2.t': "Intraoral cameras",
+      'imaging.f2.d': "Any camera Windows recognises. A photo takes one key press.",
+      'imaging.f3.t': "Watched folder",
+      'imaging.f3.d': "For any device that saves files: new images join the patient open on screen.",
+      'imaging.f4.t': "The original is never altered",
+      'imaging.f4.d': "Brightness, contrast, filters, rotation and drawings apply to the display; the original image stays intact.",
+      'imaging.f5.t': "Nothing gets lost",
+      'imaging.f5.d': "Deleted images go to a bin where they can be restored. X-rays can be protected from deletion entirely.",
+      'imaging.f6.t': "On every computer",
+      'imaging.f6.d': "With Dentivo Server, an X-ray taken at the chair shows on the practice's other PCs within seconds.",
+      'dicom.badge': "Dentivo DICOM",
+      'dicom.title': "CBCT and radiology CDs, read in your practice",
+      'dicom.sub': "Import DICOM studies, explore 3D volumes and keep them in the patient's file.",
+      'dicom.f1.t': "CDs and CBCT exports",
+      'dicom.f1.d': "Import a whole folder, such as a radiology centre's CD. Compressed files (JPEG, JPEG 2000, RLE) are accepted.",
+      'dicom.f2.t': "Patient check",
+      'dicom.f2.d': "Before importing, the file's name and date of birth are compared with the patient file: a study of another patient is flagged.",
+      'dicom.f3.t': "Slices and 3D rendering",
+      'dicom.f3.d': "Axial, coronal and sagittal slices, and a 3D rendering of the volume you can rotate.",
+      'dicom.f4.t': "Rebuilt panoramic",
+      'dicom.f4.d': "Each CBCT volume gives a panoramic rebuilt along the dental arch.",
+      'dicom.f5.t': "DICOM export",
+      'dicom.f5.d': "Send an image or a study back out as DICOM, for a colleague or a centre.",
+      'dicom.f6.t': "On every computer",
+      'dicom.f6.d': "With Dentivo Server, studies and every slice of their volumes reach the practice's other PCs.",
+      'scan.badge': "Dentivo Scan 3D",
+      'scan.title': "Your optical impressions, organised and ready for the lab",
+      'scan.sub': "Dentivo Scan 3D works with Medit Link: you scan in Medit Link, and do everything else in Dentivo Scan 3D.",
+      'scan.f1.t': "One case per impression",
+      'scan.f1.d': "Cases are kept in the patient's file, which comes straight from Dentivo.",
+      'scan.f2.t': "Start the scan",
+      'scan.f2.d': "From a case, the patient is sent to Medit Link, shown inside the scan screen. The scans come back into the case by themselves.",
+      'scan.f3.t': "STL, PLY and OBJ",
+      'scan.f3.d': "Files dropped into the watched folder join the case or patient open on screen.",
+      'scan.f4.t': "3D viewing and measuring",
+      'scan.f4.d': "Rotate the models and measure directly on the scan.",
+      'scan.f5.t': "Lab orders",
+      'scan.f5.d': "One click prepares the order: the scans, the PDF order form and the e-mail to the lab.",
+      'scan.f6.t': "On the scanner's PC",
+      'scan.f6.d': "Dentivo Scan 3D is installed on the computer connected to the scanner, where Medit Link runs.",
+      'server.badge': "Dentivo Server",
+      'server.title': "Every computer in the practice, always up to date",
+      'server.sub': "Dentivo Server is installed on every PC in the practice. It links Dentivo, Dentivo Imaging and Dentivo DICOM from one computer to the next, over the local network, without the cloud or the internet.",
+      'server.f1.t': "Every PC has a full copy",
+      'server.f1.d': "Each computer keeps all the data and keeps working even when another one is off.",
+      'server.f2.t': "Within seconds",
+      'server.f2.d': "An appointment booked at the front desk shows at the chair within seconds; screens update by themselves.",
+      'server.f3.t': "You choose who receives what",
+      'server.f3.d': "Calendar, clinical, finances, inventory, X-rays: for each PC, you decide which data it receives.",
+      'server.f4.t': "Add or remove a PC",
+      'server.f4.d': "A new computer joins the practice with a code; a removed computer receives nothing more.",
+      'server.f5.t': "Encrypted exchanges",
+      'server.f5.d': "Data travels encrypted, only on the practice's local network.",
+      'server.f6.t': "Always running",
+      'server.f6.d': "It starts with Windows, even before anyone logs in, and goes through another PC when two computers can't see each other.",
     },
   }
 
