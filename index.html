@@ -760,6 +760,7 @@
   a.feature { display: block; color: inherit; text-decoration: none; }
   a.feature:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
   .product { display: flex; flex-direction: column; }
+  .product .p-logo { display: block; width: 48px; height: 48px; object-fit: contain; margin-bottom: 14px; }
   .product .p-tag {
     font-size: 12px;
     font-weight: 650;
@@ -871,35 +872,35 @@
       </div>
       <div class="features products">
           <a class="feature product" href="#features">
-            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.5-1.6-3.5-2.5-5.2-2.2C4 3.8 2.6 6 3 9c.5 3.6 2 10 3.8 11.6.8.7 1.9.3 2.1-.7l.9-4.6c.2-1.2 2.2-1.2 2.4 0l.9 4.6c.2 1 1.3 1.4 2.1.7C17 19 18.5 12.6 19 9c.4-3-1-5.2-3.8-5.7-1.7-.3-3.7.6-5.2 2.2Z"/></svg></span>
+            <img class="p-logo" src="public/logos/dentivo.png" alt="Dentivo" width="48" height="48" loading="lazy" />
             <span class="p-tag" data-i18n="p.main.tag">Gestion du cabinet</span>
             <h3 data-i18n="p.main.name">Dentivo</h3>
             <p data-i18n="p.main.d">Dossiers patients, agenda, schéma dentaire, devis, ordonnances, laboratoire, paiements, stock et rapports.</p>
             <span class="p-more" data-i18n="products.more">En savoir plus</span>
           </a>
           <a class="feature product" href="#imaging">
-            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span>
+            <img class="p-logo" src="public/logos/imaging.png" alt="Dentivo Imaging" width="48" height="48" loading="lazy" />
             <span class="p-tag" data-i18n="p.imaging.tag">Radios &amp; photos</span>
             <h3 data-i18n="p.imaging.name">Dentivo Imaging</h3>
             <p data-i18n="p.imaging.d">Capteurs RX, scanners de plaques et caméras intra-orales : l'image arrive directement dans le dossier du patient.</p>
             <span class="p-more" data-i18n="products.more">En savoir plus</span>
           </a>
           <a class="feature product" href="#dicom">
-            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg></span>
+            <img class="p-logo" src="public/logos/dicom.png" alt="Dentivo DICOM" width="48" height="48" loading="lazy" />
             <span class="p-tag" data-i18n="p.dicom.tag">CBCT &amp; 3D</span>
             <h3 data-i18n="p.dicom.name">Dentivo DICOM</h3>
             <p data-i18n="p.dicom.d">Importez les CD et les exports CBCT, parcourez le volume en coupes et en 3D, obtenez une panoramique reconstruite.</p>
             <span class="p-more" data-i18n="products.more">En savoir plus</span>
           </a>
           <a class="feature product" href="#scan3d">
-            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span>
+            <img class="p-logo" src="public/logos/scan-3d.png" alt="Dentivo Scan 3D" width="48" height="48" loading="lazy" />
             <span class="p-tag" data-i18n="p.scan.tag">Empreintes optiques</span>
             <h3 data-i18n="p.scan.name">Dentivo Scan 3D</h3>
             <p data-i18n="p.scan.d">Un cas par empreinte, visualisation 3D et mesures, commande au laboratoire en un clic. Fonctionne avec Medit Link.</p>
             <span class="p-more" data-i18n="products.more">En savoir plus</span>
           </a>
           <a class="feature product" href="#server">
-            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3M12 12V8"/></svg></span>
+            <img class="p-logo" src="public/logos/server.png" alt="Dentivo Server" width="48" height="48" loading="lazy" />
             <span class="p-tag" data-i18n="p.server.tag">Plusieurs postes</span>
             <h3 data-i18n="p.server.name">Dentivo Server</h3>
             <p data-i18n="p.server.d">Installé sur chaque PC, il garde tous les postes du cabinet à jour entre eux, sur le réseau local, sans cloud.</p>
