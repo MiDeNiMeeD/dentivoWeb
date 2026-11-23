@@ -262,12 +262,7 @@
     background: var(--surface-default); border: 1px solid var(--border-default);
     border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 18px;
   }
-  .app img, .app .glyph { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; }
-  .app .glyph {
-    display: grid; place-items: center; background: var(--brand-primary-subtle);
-    border: 1px solid var(--brand-primary-border); color: var(--brand-primary);
-  }
-  .app .glyph svg { width: 22px; height: 22px; }
+  .app img { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; }
   .app .info { min-width: 0; flex: 1; }
   .app h3 { font-size: 15.5px; font-weight: 640; }
   .app p { margin: 2px 0 0; font-size: 13px; line-height: 1.45; color: var(--text-muted); }
@@ -480,7 +475,7 @@
           <div class="p"><span data-amount="990">990</span> DT<small data-i18n="ht">HT</small></div>
         </div>
         <div class="app">
-          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5.5c-1.5-1.6-4-2.2-5.8-1C4 6 4.3 9 5 11.5c.6 2 .8 4 1.2 6 .3 1.6 1 3 2.1 3s1.5-1.2 1.8-2.6c.3-1.3.8-2.4 1.9-2.4s1.6 1.1 1.9 2.4c.3 1.4.7 2.6 1.8 2.6s1.8-1.4 2.1-3c.4-2 .6-4 1.2-6 .7-2.5 1-5.5-1.2-7-1.8-1.2-4.3-.6-5.8 1Z"/></svg></span>
+          <img src="public/logos/dental.png" alt="" width="44" height="44" loading="lazy" />
           <div class="info"><h3>Dentivo Dental</h3><p data-i18n="app.dental">Radiographies en qualité HD</p></div>
           <div class="p"><span data-amount="890">890</span> DT<small data-i18n="ht">HT</small></div>
         </div>
@@ -538,7 +533,6 @@
           <p data-i18n="contact.body">Écrivez-nous sur WhatsApp : nous vous aidons à choisir le pack et pouvons faire une démonstration au cabinet ou en visio.</p>
         </div>
         <div class="actions">
-          <a class="btn btn-secondary" href="download.html" data-i18n="contact.demo">Essayer la démo</a>
           <a class="btn btn-primary" href="https://wa.me/21624905669" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
             <span>+216 24 905 669</span>
@@ -593,7 +587,6 @@
       'note': 'Tous les prix sont en dinars tunisiens, hors taxes. Tarifs en vigueur en 2026.',
       'contact.title': 'Un devis pour votre cabinet ?',
       'contact.body': 'Écrivez-nous sur WhatsApp : nous vous aidons à choisir le pack et pouvons faire une démonstration au cabinet ou en visio.',
-      'contact.demo': 'Essayer la démo',
       'footer.copy': '© 2026 Dentivo — Logiciels pour cabinets dentaires.',
       'footer.made': 'Conçu pour les cabinets dentaires. Hors ligne · FR/EN',
     },
@@ -629,7 +622,6 @@
       'note': 'All prices in Tunisian dinars, excluding tax. Prices valid for 2026.',
       'contact.title': 'A quote for your clinic?',
       'contact.body': 'Message us on WhatsApp: we help you pick the package and can give a demo at the clinic or by video call.',
-      'contact.demo': 'Try the demo',
       'footer.copy': '© 2026 Dentivo — Software for dental clinics.',
       'footer.made': 'Built for dental clinics. Offline · FR/EN',
     },
